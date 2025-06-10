@@ -43,9 +43,10 @@ theme:
         icon: material/brightness-4
         name: 切换到浅色模式
 
-  font:
-    text: Microsoft Yahei UI, PingFang SC, Noto Sans CJK SC, Roboto
-    code: JetBrains Mono, CaskaydiaCove Nerd Font Mono, Cascadia Code, Inconsolata Nerd Font Mono, Consolas, Source Code Pro, Roboto Mono, monospace
+  font: false
+
+  extra_css:
+  - stylesheets/extra.css
 
   icon:
     repo: fontawesome/brands/github

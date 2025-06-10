@@ -1,0 +1,13 @@
+/* docs/stylesheets/extra.css */
+:root {
+  --md-text-font: "Microsoft Yahei UI", "PingFang SC", "Noto Sans CJK SC", "Roboto", sans-serif;
+  --md-code-font: "JetBrains Mono", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Inconsolata Nerd Font Mono", "Consolas", "Source Code Pro", "Roboto Mono", monospace;
+}
+
+body {
+  font-family: var(--md-text-font);
+}
+
+code, pre, kbd {
+  font-family: var(--md-code-font);
+}
