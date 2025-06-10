@@ -22,11 +22,12 @@ jobs:
           pip install mkdocs-material
           pip install mkdocs-minify-plugin
           pip install mkdocs-git-revision-date-localized-plugin
-          pip install "mkdocs-material[imaging]"  # 这行包含了 social 插件需要的依赖
           
-      - name: Setup CNAME
-        run: echo "mbnovel.wr.do" > docs/CNAME
-        
+      - name: Setup CNAME and nojekyll
+        run: |
+          echo "mbnovel.wr.do" > docs/CNAME
+          touch ./docs/.nojekyll  # 添加这行
+          
       - name: Deploy
         run: |
           git config --global user.name "github-actions[bot]"

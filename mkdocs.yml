@@ -4,6 +4,7 @@ site_url: https://mbnovel.wr.do/
 site_author: Yaowen Fan
 site_description: ⌚ An open-source visual novel development framework specifically designed for the Xiaomi Mi Band 9 Pro, simple and easy to use. / 一款专为小米手环 9 Pro 设计的开源视觉小说开发框架，简单易上手。
 copyright: Copyright &copy; 2024 Yaowen Fan
+docs_dir: docs
 
 # 仓库信息
 repo_name: fywmjj/MBNovel
