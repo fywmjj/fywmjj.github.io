@@ -1,0 +1,98 @@
+# 站点信息
+site_name: MBNovel 开发文档
+site_url: https://mbnovel.wr.do/
+site_author: Yaowen Fan
+site_description: ⌚ An open-source visual novel development framework specifically designed for the Xiaomi Mi Band 9 Pro, simple and easy to use. / 一款专为小米手环 9 Pro 设计的开源视觉小说开发框架，简单易上手。
+copyright: Copyright &copy; 2024 Yaowen Fan
+
+# 仓库信息
+repo_name: fywmjj/MBNovel
+repo_url: https://github.com/fywmjj/MBNovel
+
+# 主题设置
+theme:
+  name: material
+  language: zh
+  
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.expand
+    - navigation.footer
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+
+  font:
+    text: Microsoft Yahei UI, PingFang SC, Noto Sans CJK SC, Roboto
+    code: JetBrains Mono, CaskaydiaCove Nerd Font Mono, Cascadia Code, Inconsolata Nerd Font Mono, Consolas, Source Code Pro, Roboto Mono, monospace
+
+  icon:
+    repo: fontawesome/brands/github
+
+# 扩展配置
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  plugins:
+  - search:
+      lang: 
+        - en
+        - ja
+        - zh
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - social
+
+  extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fywmjj
+  generator: false  # 删除页脚的 "Made with Material for MkDocs"
+  consent:
+    title: Cookie 同意
+    description: >- 
+      我们使用 cookies 来识别您的重复访问和偏好，以及衡量文档的效果。
