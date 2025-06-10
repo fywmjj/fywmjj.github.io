@@ -17,16 +17,24 @@ jobs:
         with:
           python-version: '3.x'
           
-      - name: Install dependencies
+      - name: Install system dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+          
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
           pip install mkdocs-material
           pip install mkdocs-minify-plugin
           pip install mkdocs-git-revision-date-localized-plugin
+          pip install pillow cairosvg  # 明确安装这两个依赖
+          pip install "mkdocs-material[imaging]"  # 完整安装包含 social 插件的依赖
           
       - name: Setup CNAME and nojekyll
         run: |
           echo "mbnovel.wr.do" > docs/CNAME
-          touch ./docs/.nojekyll  # 添加这行
+          touch ./docs/.nojekyll
           
       - name: Deploy
         run: |
