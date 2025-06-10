@@ -13,7 +13,7 @@ repo_url: https://github.com/fywmjj/MBNovel
 theme:
   name: material
   language: zh
-  
+
   features:
     - navigation.tabs
     - navigation.top
@@ -26,7 +26,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - toc.follow
-  
+
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -75,9 +75,10 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-  plugins:
+# 插件配置
+plugins:
   - search:
-      lang: 
+      lang:
         - en
         - ja
         - zh
@@ -87,12 +88,13 @@ markdown_extensions:
       enable_creation_date: true
   - social
 
-  extra:
+# 额外设置
+extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/fywmjj
-  generator: false  # 删除页脚的 "Made with Material for MkDocs"
+  generator: false
   consent:
     title: Cookie 同意
-    description: >- 
+    description: >-
       我们使用 cookies 来识别您的重复访问和偏好，以及衡量文档的效果。
