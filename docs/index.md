@@ -1,4 +1,5 @@
 ---
+template: home.html
 title: MBNovel 开发文档
 social:
   cards_layout_options:
