@@ -3,6 +3,8 @@ on:
   push:
     branches: 
       - main
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,16 +17,12 @@ jobs:
         with:
           python-version: '3.x'
           
-      - name: Install SSH key
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}
-          
       - name: Install dependencies
         run: |
           pip install mkdocs-material
           pip install mkdocs-minify-plugin
           pip install mkdocs-git-revision-date-localized-plugin
+          pip install "mkdocs-material[imaging]"  # 这行包含了 social 插件需要的依赖
           
       - name: Setup CNAME
         run: echo "mbnovel.wr.do" > docs/CNAME
