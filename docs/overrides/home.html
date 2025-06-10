@@ -1,0 +1,188 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <!-- 自定义样式 -->
+  <style>
+    /* 固定头部 */
+    .md-header {
+      position: initial;
+    }
+
+    /* 移除默认间距 */
+    .md-main__inner {
+      margin: 0;
+    }
+
+    /* 隐藏主内容区域 */
+    .md-content {
+      display: none;
+    }
+
+    /* 隐藏目录 */
+    @media screen and (min-width: 60em) {
+      .md-sidebar--secondary {
+        display: none;
+      }
+    }
+
+    /* 隐藏导航 */
+    @media screen and (min-width: 76.25em) {
+      .md-sidebar--primary {
+        display: none;
+      }
+    }
+
+    /* 自定义动画效果 */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 英雄区域样式 */
+    .mdx-container {
+      background: linear-gradient(to bottom right, var(--md-primary-fg-color), var(--md-accent-fg-color));
+      padding: 4rem 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .mdx-hero {
+      margin: 0 auto;
+      padding: 0 1rem;
+      color: var(--md-primary-bg-color);
+    }
+
+    /* 英雄区域内容布局 */
+    .mdx-hero__content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .mdx-hero__image {
+      animation: float 6s ease-in-out infinite;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+
+    .mdx-hero__image img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    }
+
+    /* 按钮样式 */
+    .md-button {
+      margin: 1rem .5rem;
+      transition: all 0.2s ease;
+    }
+
+    .md-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* 特性卡片 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+
+  <!-- 英雄区域 -->
+  <section class="mdx-container">
+    <div class="md-grid md-typeset">
+      <div class="mdx-hero">
+        <!-- 英雄图片 -->
+        <div class="mdx-hero__image">
+          <img
+            src="assets/images/hero.png"
+            alt="MBNovel 示意图"
+            draggable="false"
+          >
+        </div>
+
+        <!-- 英雄内容 -->
+        <div class="mdx-hero__content">
+          <h1>MBNovel ⌚</h1>
+          <p>{{ config.site_description }}</p>
+          <a
+            href="{{ 'guide/getting-started/' | url }}"
+            class="md-button md-button--primary"
+          >
+            快速开始
+          </a>
+          <a
+            href="{{ 'examples/' | url }}"
+            class="md-button"
+          >
+            查看示例
+          </a>
+
+          <!-- 特性展示 -->
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🎮</div>
+              <h3>简单易用</h3>
+              <p>直观的 API 设计，快速上手开发</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>性能优化</h3>
+              <p>专为手环优化的轻量级框架</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🎨</div>
+              <h3>丰富功能</h3>
+              <p>支持文本、选择、音乐等功能</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+<!-- 内容区域 -->
+{% block content %}{% endblock %}
+
+<!-- 页脚 -->
+{% block footer %}
+  <style>
+    .md-footer {
+      background: linear-gradient(to right, var(--md-primary-fg-color), var(--md-accent-fg-color));
+    }
+  </style>
+  {{ super() }}
+{% endblock %}
