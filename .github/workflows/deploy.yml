@@ -9,21 +9,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 解决 git-revision-date-localized-plugin 的警告
+          fetch-depth: 0
           
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+          
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}
           
       - name: Install dependencies
         run: |
           pip install mkdocs-material
           pip install mkdocs-minify-plugin
           pip install mkdocs-git-revision-date-localized-plugin
-          pip install "mkdocs-material[imaging]"  # 包含 cairosvg 和 Pillow
           
       - name: Setup CNAME
         run: echo "mbnovel.wr.do" > docs/CNAME
         
       - name: Deploy
-        run: mkdocs gh-deploy --force
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          mkdocs gh-deploy --force
