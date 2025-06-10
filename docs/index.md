@@ -237,14 +237,6 @@ TOC 全称为 Table of Content，列出全部标题。
 
 Markdown Nice 这么好用，简直是{喜大普奔|hē hē hē hē}呀！
 
-### 3.6 横屏滑动幻灯片
-
-> 支持平台：微信公众号。
-
-通过`<![](url),![](url)>`这种语法设置横屏滑动滑动片，具体用法如下：
-
-<![蓝1](https://markdown.com.cn/images/blue.jpg),![绿2](https://markdown.com.cn/images/green.jpg),![红3](https://markdown.com.cn/images/red.jpg)>
-
 ## 4 其他语法
 
 ### 4.1 HTML
