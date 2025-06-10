@@ -8,13 +8,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 解决 git-revision-date-localized-plugin 的警告
+          
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - run: |
+          
+      - name: Install dependencies
+        run: |
           pip install mkdocs-material
           pip install mkdocs-minify-plugin
           pip install mkdocs-git-revision-date-localized-plugin
-          pip install mkdocs-social-plugin
-          echo "mbnovel.wr.do" > docs/CNAME
-          mkdocs gh-deploy --force
+          pip install "mkdocs-material[imaging]"  # 包含 cairosvg 和 Pillow
+          
+      - name: Setup CNAME
+        run: echo "mbnovel.wr.do" > docs/CNAME
+        
+      - name: Deploy
+        run: mkdocs gh-deploy --force

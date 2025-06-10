@@ -60,8 +60,8 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
@@ -75,7 +75,6 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-# 插件配置
 plugins:
   - search:
       lang:
@@ -86,7 +85,8 @@ plugins:
       minify_html: true
   - git-revision-date-localized:
       enable_creation_date: true
-  - social
+  - social:
+      cards_dir: assets/social  # 社交卡片的输出目录
 
 # 额外设置
 extra:
