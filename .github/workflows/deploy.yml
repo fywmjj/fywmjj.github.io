@@ -33,7 +33,7 @@ jobs:
           
       - name: Setup CNAME and nojekyll
         run: |
-          echo "mbnovel.wr.do" > docs/CNAME
+          echo "https://mbnovel.wr.do" > docs/CNAME
           touch ./docs/.nojekyll
           
       - name: Deploy
