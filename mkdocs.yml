@@ -10,11 +10,17 @@ docs_dir: docs
 repo_name: fywmjj/MBNovel
 repo_url: https://github.com/fywmjj/MBNovel
 
+# 额外样式
+extra_css:
+  - stylesheets/extra.css
+
 # 主题设置
 theme:
   name: material
   language: zh
   custom_dir: overrides
+  logo: assets/icon.png
+  favicon: assets/favicon.png
 
   features:
     - navigation.tabs
@@ -43,12 +49,15 @@ theme:
       accent: indigo
       toggle:
         icon: material/brightness-4
+        name: 跟随系统
+    - media: "(prefers-color-scheme)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-auto
         name: 切换到浅色模式
 
   font: false
-
-  extra_css:
-  - stylesheets/extra.css
 
   icon:
     repo: fontawesome/brands/github
@@ -89,7 +98,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - social:
-      cards_dir: assets/social  # 社交卡片的输出目录
+      cards_dir: assets/social
 
 # 额外设置
 extra:
@@ -101,3 +110,15 @@ extra:
     title: Cookie 同意
     description: >-
       我们使用 cookies 来识别您的重复访问和偏好，以及衡量文档的效果。
+
+# 导航配置
+nav:
+  - MBNovel 首页: index.md  # 首页
+  - 入门指南:
+      - 配置环境: intro/setup-env
+      - 配置 IDE: 
+        - 使用 AIoT IDE: intro/ides/aiot-ide
+        - 使用基于 VSCode 的 IDE: intro/ides/vscode
+        - 使用 Vim/Neovim: intro/ides/nvim
+      - 打包你的第一个 MBNovel 项目: intro/package/index.md
+  - 示例项目: examples/index.md
