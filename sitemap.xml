@@ -2,14 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mbnovel.wr.do/</loc>
-         <lastmod>2025-06-10</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://mbnovel.wr.do/examples/</loc>
-         <lastmod>2025-06-10</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://mbnovel.wr.do/guide/getting-started/</loc>
-         <lastmod>2025-06-10</lastmod>
+         <lastmod>2025-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://mbnovel.wr.do/intro/ides/aiot-ide/</loc>
+         <lastmod>2025-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://mbnovel.wr.do/intro/ides/nvim/</loc>
+         <lastmod>2025-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://mbnovel.wr.do/intro/ides/vscode/</loc>
+         <lastmod>2025-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://mbnovel.wr.do/intro/setup-env/</loc>
+         <lastmod>2025-06-18</lastmod>
     </url>
 </urlset>
